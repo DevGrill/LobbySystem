@@ -1,0 +1,7 @@
+name: LobbySystem
+version: 1.0
+main: xyz.devgrill.LobbySystem
+author: devgrill
+commands:
+  setwarp:
+    description: /setwarp {warpname}
