@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="LobbySystem">
-    <output-path>$USER_HOME$/Documents/LocalHost/plugins</output-path>
+    <output-path>$USER_HOME$/Documents/localhost/plugins</output-path>
     <root id="archive" name="LobbySystem.jar">
       <element id="module-output" name="LobbySystem" />
       <element id="library" level="project" name="Maven: xyz.devgrill:SqlAPI-MC:1.0-SNAPSHOT" />

@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import xyz.devgrill.teleporter.Teleporter;
 import xyz.devgrill.utils.CreateItems;
 import xyz.devgrill.utils.Warps;
 
@@ -19,11 +20,11 @@ public class ClickInv implements Listener {
     public void onCLickLobbySystem(PlayerInteractEvent e){
         Player p = (Player) e.getPlayer();
         if(p.getItemInHand().getType() == Material.COMPASS){
-            CreateItems createItems = new CreateItems();
-            Inventory inv = Bukkit.createInventory(null, 3 * 9, "Navigation");
-            inv.setItem(9, createItems.createItem(Material.GRASS, 1, 0 ,"§2Farmwelt"));
-            inv.setItem(17, createItems.createItem(Material.NETHER_STAR, 1, 0 ,"§4Nether"));
-            p.openInventory(inv);
+            Teleporter.createTeleporter(p);
+        }
+
+        if(p.getItemInHand().getType() == Material.GREEN_RECORD){
+
         }
     }
 
