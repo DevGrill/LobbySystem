@@ -8,16 +8,10 @@ import xyz.devgrill.utils.CreateItems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recorder {
-
-    private List<String> players = new ArrayList<>();
-
-    public List<String> getPlayers(){
-        return this.players;
-    }
+public class Recorder{
 
 
-    public void toggleRecorder(Player p){
+    public void toggleRecorder(Player p, List<String> players){
         CreateItems createItems = new CreateItems();
         if(p.getInventory().getItemInHand().getItemMeta().getDisplayName().equals("§gAlle Spieler")){
             p.setItemInHand(createItems.createItem(Material.RECORD_9, 1, 0 ,"§gKeine Spieler"));
@@ -31,7 +25,7 @@ public class Recorder {
             for (Player online : Bukkit.getOnlinePlayers()) {
                 p.showPlayer(online);
             }
-            players.remove(p.getName());
+            players.removeIf(playerName -> playerName.equals(p.getName()));
             p.sendMessage("§aAlle spieler werden dir angezeigt.");
         }
     }

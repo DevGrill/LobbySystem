@@ -8,6 +8,9 @@ import xyz.devgrill.listener.ClickInv;
 import xyz.devgrill.listener.JoinListener;
 import xyz.devgrill.listener.QuitListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LobbySystem extends JavaPlugin {
 
     @Override

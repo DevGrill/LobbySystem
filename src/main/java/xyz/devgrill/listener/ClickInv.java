@@ -20,6 +20,12 @@ import java.util.List;
 
 public class ClickInv implements Listener {
 
+    private List<String> players = new ArrayList<>();
+
+    public List<String> getPlayers(){
+        return players;
+    }
+
     @EventHandler
     public void onCLickLobbySystem(PlayerInteractEvent e){
         Player p = (Player) e.getPlayer();
@@ -30,7 +36,7 @@ public class ClickInv implements Listener {
 
         if(p.getItemInHand().getType() == Material.GREEN_RECORD || p.getItemInHand().getType() == Material.RECORD_9){
             Recorder recorder = new Recorder();
-            recorder.toggleRecorder(p);
+            recorder.toggleRecorder(p, players);
             p.updateInventory();
             e.setCancelled(true);
         }

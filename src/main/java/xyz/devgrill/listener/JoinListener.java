@@ -5,9 +5,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import xyz.devgrill.LobbySystem;
 import xyz.devgrill.recorder.Recorder;
 import xyz.devgrill.utils.AddItems;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JoinListener implements Listener {
@@ -18,9 +20,8 @@ public class JoinListener implements Listener {
         AddItems.addItems(p);
         e.setJoinMessage(p.getDisplayName() + " Ist dem Netzwerk beigetreten.");
 
-        Recorder recorder = new Recorder();
-        List<String> players = recorder.getPlayers();
-
+        ClickInv clickInv = new ClickInv();
+        List<String> players = clickInv.getPlayers();
         for (String p2name : players){
             Player p2 = Bukkit.getPlayer(p2name);
             if(p2 != null)
